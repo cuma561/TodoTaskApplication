@@ -13,9 +13,9 @@ function App() {
   const [isShowForm, setIsShowForm] = useState(false);
 
   const [todos, setTodos] = useState([
-    {id: 1, name: "Zrobić zakupy", done: false},
-    {id: 2, name: "Nauczyć się programowania", done: false},
-    {id: 3, name: "Wyrzucić śmieci", done: true}
+    {id: 1, name: "Do shopping", done: false},
+    {id: 2, name: "Learn programming", done: false},
+    {id: 3, name: "Throw out rubbish", done: true}
   ]);
 
   function addTodo(newTodoName)
@@ -56,7 +56,7 @@ function App() {
       <div className={styles.container}>
         <header className={styles.header}>
           <div>
-            <h1>Zadania do zrobienia</h1>
+            <h1>Tasks to do</h1>
             <h2>{getSubheading(todos.length)}</h2>
           </div>
           {!isShowForm && (<button onClick={() => setIsShowForm(true)} className={styles.button}>+</button>)}

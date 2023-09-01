@@ -2,13 +2,13 @@ export function getSubheading(numberOfTodoItem)
 {
 	switch (true) {
         case numberOfTodoItem > 4:
-            return `${numberOfTodoItem} zadań`;
+            return `${numberOfTodoItem} tasks`;
         case numberOfTodoItem > 1:
-            return `${numberOfTodoItem} zadania`;
+            return `${numberOfTodoItem} tasks`;
         case numberOfTodoItem === 1:
-            return "1 zadanie";
+            return "1 tasks";
         case numberOfTodoItem === 0:
         default:
-            return "Brak zadań";
+            return "No tasks";
     }
 }

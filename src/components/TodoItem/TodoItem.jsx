@@ -5,8 +5,8 @@ export function TodoItem({ name, done, onDone, onDelete })
 	return(
 		<li className={styles.item}>
 			<span className={`${styles.name} ${done ? styles.done : ""}`}>{ name }</span>
-			{!done && (<Button onClick={onDone}>Zrobione</Button>)}
-			<Button onClick={onDelete}>Usuń</Button>
+			{!done && (<Button onClick={onDone}>Done</Button>)}
+			<Button onClick={onDelete}>Delete</Button>
 		</li>
 	)
 }
