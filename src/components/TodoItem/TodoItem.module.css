@@ -8,3 +8,10 @@
     padding-top: 16px;
     min-width: 400px;
 }
+.name {
+    width: 100%;
+}
+
+.done {
+    text-decoration: line-through;
+}

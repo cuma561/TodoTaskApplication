@@ -10,6 +10,12 @@ function App() {
 
   const [isShowForm, setIsShowForm] = useState(false);
 
+  const [todos, setTodos] = useState([
+    {id: 1, name: "Zrobić zakupy", done: false},
+    {id: 2, name: "Nauczyć się programowania", done: false},
+    {id: 3, name: "Wyrzucić śmieci", done: true}
+  ]);
+
   return (
     <>
       <div className={styles.container}>
@@ -22,7 +28,9 @@ function App() {
         </header>
         {isShowForm && (<Form />)}
         <ul>
-          <TodoItem />
+          {todos.map(({ id, name, done }) => (
+            <TodoItem key={id} name={name} done={done} />
+          ))}
         </ul>
       </div>
     </>
