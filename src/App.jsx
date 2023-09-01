@@ -16,6 +16,19 @@ function App() {
     {id: 3, name: "Wyrzucić śmieci", done: true}
   ]);
 
+  function addTodo(newTodoName)
+  {
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      {
+        id: Math.random(),
+        name: newTodoName,
+        done: false
+      },
+    ]);
+    setIsShowForm(false);
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -26,7 +39,7 @@ function App() {
           </div>
           {!isShowForm && (<button onClick={() => setIsShowForm(true)} className={styles.button}>+</button>)}
         </header>
-        {isShowForm && (<Form />)}
+        {isShowForm && (<Form onFormSubmit={(newTodoName) => addTodo(newTodoName)} />)}
         <ul>
           {todos.map(({ id, name, done }) => (
             <TodoItem key={id} name={name} done={done} />
