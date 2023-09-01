@@ -29,6 +29,26 @@ function App() {
     setIsShowForm(false);
   }
 
+  function deleteTodo(id)
+  {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  }
+
+  function doneTodo(id) {
+        setTodos((prevTodos) =>
+            prevTodos.map((todo) => {
+                if (todo.id !== id) {
+                    return todo;
+                }
+
+                return {
+                    ...todo,
+                    done: true,
+                };
+            })
+        );
+    }
+
   return (
     <>
       <div className={styles.container}>
@@ -42,7 +62,8 @@ function App() {
         {isShowForm && (<Form onFormSubmit={(newTodoName) => addTodo(newTodoName)} />)}
         <ul>
           {todos.map(({ id, name, done }) => (
-            <TodoItem key={id} name={name} done={done} />
+            <TodoItem key={id} name={name} done={done} onDone={() => doneTodo(id)} 
+              onDelete={() => deleteTodo(id)} />
           ))}
         </ul>
       </div>
