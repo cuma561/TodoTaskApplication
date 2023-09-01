@@ -6,7 +6,6 @@ export function TodoItem({ name, done })
 		<li className={styles.item}>
 			<span className={`${styles.name} ${done ? styles.done : ""}`}>{ name }</span>
 			{!done && (<Button>Zrobione</Button>)}
-			{!done && (<Button>Edytuj</Button>)}
 			<Button>Usuń</Button>
 		</li>
 	)
