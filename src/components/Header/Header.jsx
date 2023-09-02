@@ -4,9 +4,7 @@ export function Header({ name})
 {
 	return(
 		<header className={styles.header}>
-			<div>
-				<h1>{ name }</h1>
-			</div>
+			<h1>{ name }</h1>
 		</header>
 	)
 }
