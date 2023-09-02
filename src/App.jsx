@@ -7,6 +7,7 @@ import { Form } from './components/Form/Form';
 import { TodoItem } from './components/TodoItem/TodoItem';
 import { Header } from './components/Header/Header';
 import { ShowFormButton } from './components/Button/ShowFormButton';
+import { Subheading } from './components/Subheading/Subheading';
 
 import { getSubheading } from "./utils/getSubheading";
 
@@ -60,7 +61,7 @@ function App() {
           <Header name="Todo Tasks"/>
           {!isShowForm && <ShowFormButton name="+" onClick={() => setIsShowForm(true)}/>}
         </div>
-        <h2>{getSubheading(todos.length)}</h2>
+        <Subheading todos={getSubheading(todos.length)}/>
         {isShowForm && <Form onFormSubmit={(newTodoName) => addTodo(newTodoName)} />}
         <ul>
           {todos.map(({ id, name, done }) => (
