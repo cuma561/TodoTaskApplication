@@ -56,7 +56,7 @@ function App() {
       <div className={styles.container}>
         <header className={styles.header}>
           <div>
-            <h1>Tasks to do</h1>
+            <h1>Todo Tasks</h1>
             <h2>{getSubheading(todos.length)}</h2>
           </div>
           {!isShowForm && (<button onClick={() => setIsShowForm(true)} className={styles.button}>+</button>)}
