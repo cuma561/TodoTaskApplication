@@ -5,6 +5,8 @@ import styles from './App.module.css'
 
 import { Form } from './components/Form/Form';
 import { TodoItem } from './components/TodoItem/TodoItem';
+import { Header } from './components/Header/Header';
+import { ShowFormButton } from './components/Button/ShowFormButton';
 
 import { getSubheading } from "./utils/getSubheading";
 
@@ -54,14 +56,12 @@ function App() {
   return (
     <>
       <div className={styles.container}>
-        <header className={styles.header}>
-          <div>
-            <h1>Todo Tasks</h1>
-            <h2>{getSubheading(todos.length)}</h2>
-          </div>
-          {!isShowForm && (<button onClick={() => setIsShowForm(true)} className={styles.button}>+</button>)}
-        </header>
-        {isShowForm && (<Form onFormSubmit={(newTodoName) => addTodo(newTodoName)} />)}
+        <div className={styles.row}>
+          <Header name="Todo Tasks"/>
+          {!isShowForm && <ShowFormButton name="+" onClick={() => setIsShowForm(true)}/>}
+        </div>
+        <h2>{getSubheading(todos.length)}</h2>
+        {isShowForm && <Form onFormSubmit={(newTodoName) => addTodo(newTodoName)} />}
         <ul>
           {todos.map(({ id, name, done }) => (
             <TodoItem key={id} name={name} done={done} onDone={() => doneTodo(id)} 
