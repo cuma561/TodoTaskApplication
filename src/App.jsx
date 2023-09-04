@@ -15,11 +15,7 @@ function App() {
 
   const [isShowForm, setIsShowForm] = useState(false);
 
-  const [todos, setTodos] = useState([
-    {id: 1, name: "Do shopping", done: false},
-    {id: 2, name: "Learn programming", done: false},
-    {id: 3, name: "Throw out rubbish", done: true}
-  ]);
+  const [todos, setTodos] = useState([]);
 
   function addTodo(newTodoName)
   {
