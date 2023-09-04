@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import styles from './App.module.css'
@@ -13,9 +13,15 @@ import { getSubheading } from "./utils/getSubheading";
 
 function App() {
 
+  const localStorageTodos = JSON.parse(localStorage.getItem("todos"));
+
   const [isShowForm, setIsShowForm] = useState(false);
 
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(localStorageTodos);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   function addTodo(newTodoName)
   {
