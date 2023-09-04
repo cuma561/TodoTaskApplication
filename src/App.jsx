@@ -56,6 +56,21 @@ function App() {
         );
     }
 
+    function undoneTodo(id) {
+      setTodos((prevTodos) =>
+            prevTodos.map((todo) => {
+                if (todo.id !== id) {
+                    return todo;
+                }
+
+                return {
+                    ...todo,
+                    done: false,
+                };
+            })
+        );
+    }
+
   return (
     <>
       <div className={styles.container}>
@@ -68,7 +83,7 @@ function App() {
         <ul>
           {todos.map(({ id, name, done }) => (
             <TodoItem key={id} name={name} done={done} onDone={() => doneTodo(id)} 
-              onDelete={() => deleteTodo(id)} />
+              onDelete={() => deleteTodo(id)} onUndone={() => undoneTodo(id)} />
           ))}
         </ul>
       </div>
