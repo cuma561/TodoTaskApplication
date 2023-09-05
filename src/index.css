@@ -19,3 +19,29 @@ body
 	justify-content: center;
 	align-items: center;
 }
+.container
+{
+	display: inline-block;
+    background-color: var(--color-white);
+    padding: 52px 54px;
+    border-radius: 12px;
+    max-width: 800px;
+}
+.row
+{
+	display: flex;
+    gap: 200px;
+}
+.item {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid black;
+    margin-top: 16px;
+    padding-top: 16px;
+    min-width: 400px;
+}
+.name {
+    width: 100%;
+}

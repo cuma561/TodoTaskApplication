@@ -1,12 +1,8 @@
-import styles from './MainTodo.module.css'
 import { useEffect, useState } from 'react'
 import { Header } from '../Header/Header';
 import { ShowFormButton } from '../Button/ShowFormButton';
-
 import { Subheading } from '../Subheading/Subheading';
-
 import { getSubheading } from "../../utils/getSubheading";
-
 import { Form } from '../Form/Form';
 import { TodoItem } from '../TodoItem/TodoItem';
 import { MainMenu } from '../MainMenu/MainMenu';
@@ -74,8 +70,8 @@ export function MainTodo()
 	return(
 		<>
             <MainMenu />
-			<div className={styles.container}>
-				<div className={styles.row}>
+			<div className="container">
+				<div className="row">
 					<Header name="Todo Tasks"/>
 					{!isShowForm && <ShowFormButton name="+" onClick={() => setIsShowForm(true)}/>}
 				</div>

@@ -1,14 +1,10 @@
-import styles from './MainCategory.module.css'
-
 import { useEffect, useState } from 'react';
-
 import { Header } from '../Header/Header';
 import { ShowFormButton } from '../Button/ShowFormButton';
 import { FormCategory } from '../Form/FormCategory';
 import { CategoryItem } from '../CategoryItem/CategoryItem';
 import { MainMenu } from '../MainMenu/MainMenu';
 import { Subheading } from '../Subheading/Subheading';
-
 import { getSubheadingCategory } from "../../utils/getSubheading";
 
 export function MainCategory()
@@ -43,8 +39,8 @@ export function MainCategory()
 	return(
 		<>
 			<MainMenu />
-			<div className={styles.container}>
-				<div className={styles.row}>
+			<div className="container">
+				<div className="row">
 					<Header name="Category Task" />
 					{!isShowForm && <ShowFormButton name="+" onClick={() => setIsShowForm(true)}/>}
 				</div>
