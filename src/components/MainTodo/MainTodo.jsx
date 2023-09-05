@@ -9,6 +9,7 @@ import { getSubheading } from "../../utils/getSubheading";
 
 import { Form } from '../Form/Form';
 import { TodoItem } from '../TodoItem/TodoItem';
+import { MainMenu } from '../MainMenu/MainMenu';
 
 export function MainTodo()
 {
@@ -72,6 +73,7 @@ export function MainTodo()
 
 	return(
 		<>
+            <MainMenu />
 			<div className={styles.container}>
 				<div className={styles.row}>
 					<Header name="Todo Tasks"/>

@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react';
 import { Header } from '../Header/Header';
 import { ShowFormButton } from '../Button/ShowFormButton';
 import { FormCategory } from '../Form/FormCategory';
-import { CategoryItem } from '../CategoryItem/CategoryItem'
+import { CategoryItem } from '../CategoryItem/CategoryItem';
+import { MainMenu } from '../MainMenu/MainMenu';
 
 export function MainCategory()
 {
@@ -37,17 +38,20 @@ export function MainCategory()
 	}
 
 	return(
-		<div className={styles.container}>
-			<div className={styles.row}>
-				<Header name="Category Task" />
-				{!isShowForm && <ShowFormButton name="+" onClick={() => setIsShowForm(true)}/>}
+		<>
+			<MainMenu />
+			<div className={styles.container}>
+				<div className={styles.row}>
+					<Header name="Category Task" />
+					{!isShowForm && <ShowFormButton name="+" onClick={() => setIsShowForm(true)}/>}
+				</div>
+				{isShowForm && <FormCategory onFormSubmit={(newCategoryTodoName) => addCategoryTodo(newCategoryTodoName)}/>}
+				<ul>
+					{categories.map(({ id, name }) => (
+						<CategoryItem key={id} name={name} onDelete={() => deleteCategoryTodo(id)}/>
+					))}
+				</ul>
 			</div>
-			{isShowForm && <FormCategory onFormSubmit={(newCategoryTodoName) => addCategoryTodo(newCategoryTodoName)}/>}
-			<ul>
-				{categories.map(({ id, name }) => (
-					<CategoryItem key={id} name={name} onDelete={() => deleteCategoryTodo(id)}/>
-				))}
-			</ul>
-		</div>
+		</>
 	)
 }
