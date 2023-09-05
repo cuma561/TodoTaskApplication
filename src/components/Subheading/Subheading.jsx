@@ -1,6 +1,6 @@
-export function Subheading({ todos })
+export function Subheading({ name })
 {
 	return (
-		<h2>{todos}</h2>
+		<h2>{name}</h2>
 	)
 }
