@@ -1,6 +1,6 @@
 import styles from './MainCategory.module.css'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Header } from '../Header/Header';
 import { ShowFormButton } from '../Button/ShowFormButton';
@@ -9,13 +9,15 @@ import { CategoryItem } from '../CategoryItem/CategoryItem'
 
 export function MainCategory()
 {
+	const localStorageCategories = JSON.parse(localStorage.getItem("categories"));
+
 	const [isShowForm, setIsShowForm] = useState(false);
 
-	const [categories, setCategories] = useState([
-		{ id: 1, name: "Shopping"},
-		{ id: 2, name: "Learning"},
-		{ id: 3, name: "Homework"}
-	]);
+	const [categories, setCategories] = useState(localStorageCategories);
+
+	useEffect(() => {
+		localStorage.setItem("categories", JSON.stringify(categories))
+	}, [categories]);
 
 	function addCategoryTodo(newCategoryTodoName)
 	{
