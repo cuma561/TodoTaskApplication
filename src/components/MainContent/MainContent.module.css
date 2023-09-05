@@ -1,0 +1,15 @@
+.menu
+{
+	display: flex;
+	justify-content: center;
+}
+.mainContainer
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--color-white);
+    padding: 22px 24px;
+    border-radius: 12px;
+    max-width: 800px;
+}
