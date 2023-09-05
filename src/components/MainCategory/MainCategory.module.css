@@ -1,0 +1,13 @@
+.container
+{
+	display: inline-block;
+    background-color: var(--color-white);
+    padding: 52px 54px;
+    border-radius: 12px;
+    max-width: 800px;
+}
+.row
+{
+    display: flex;
+    gap: 200px;
+}
