@@ -6,9 +6,7 @@ export function MainContent()
 {
 	return(
 		<>
-			<div className={styles.menu}>
-				<MainMenu />
-			</div>
+			<MainMenu />
 			<div className={styles.mainContainer}>
 				<MainContainer />
 			</div>
