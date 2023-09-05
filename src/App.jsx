@@ -1,14 +1,12 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
-import { MainTodo } from './components/MainTodo/MainTodo';
+import { MainContent } from './components/MainContent/MainContent';
 
 function App() {
 
   return (
-    <>
-      <MainTodo />
-    </>
+    <MainContent />
   )
 }
 
