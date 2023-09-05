@@ -67,6 +67,11 @@ export function MainTodo()
         );
     }
 
+    function editTodo(id)
+    {
+        console.log("Edit Todo Task");
+    }
+
 	return(
 		<>
             <MainMenu />
@@ -80,7 +85,8 @@ export function MainTodo()
         		<ul>
           			{todos.map(({ id, name, done }) => (
             			<TodoItem key={id} name={name} done={done} onDone={() => doneTodo(id)} 
-              				onDelete={() => deleteTodo(id)} onUndone={() => undoneTodo(id)} />
+              				onDelete={() => deleteTodo(id)} onUndone={() => undoneTodo(id)} 
+                            onEdit={() => editTodo(id)}/>
           			))}
         		</ul>
 			</div>

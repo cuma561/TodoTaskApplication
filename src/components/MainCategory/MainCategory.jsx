@@ -36,6 +36,11 @@ export function MainCategory()
 		setCategories((prevCategories) => prevCategories.filter((category) => category.id !== id));
 	}
 
+	function editCategoryTodo(id)
+	{
+		console.log("Edit Category");
+	}
+
 	return(
 		<>
 			<MainMenu />
@@ -48,7 +53,8 @@ export function MainCategory()
 				{isShowForm && <FormCategory onFormSubmit={(newCategoryTodoName) => addCategoryTodo(newCategoryTodoName)}/>}
 				<ul>
 					{categories.map(({ id, name }) => (
-						<CategoryItem key={id} name={name} onDelete={() => deleteCategoryTodo(id)}/>
+						<CategoryItem key={id} name={name} onEdit={() => editCategoryTodo(id)}
+							onDelete={() => deleteCategoryTodo(id)}/>
 					))}
 				</ul>
 			</div>
