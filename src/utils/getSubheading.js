@@ -12,3 +12,18 @@ export function getSubheading(numberOfTodoItem)
             return "No tasks";
     }
 }
+
+export function getSubheadingCategory(numberOfCategoryItem)
+{
+    switch(true) {
+        case numberOfCategoryItem > 4:
+            return `${numberOfCategoryItem} categories`;
+        case numberOfCategoryItem > 1:
+            return `${numberOfCategoryItem} categories`;
+        case numberOfCategoryItem === 1:
+            return "1 category";
+        case numberOfCategoryItem === 0:
+        default:
+            return "No category";
+    }
+}
