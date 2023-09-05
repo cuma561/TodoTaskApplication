@@ -79,7 +79,7 @@ export function MainTodo()
 					<Header name="Todo Tasks"/>
 					{!isShowForm && <ShowFormButton name="+" onClick={() => setIsShowForm(true)}/>}
 				</div>
-				<Subheading todos={getSubheading(todos.length)}/>
+				<Subheading name={getSubheading(todos.length)}/>
 				{isShowForm && <Form onFormSubmit={(newTodoName) => addTodo(newTodoName)} />}
         		<ul>
           			{todos.map(({ id, name, done }) => (
