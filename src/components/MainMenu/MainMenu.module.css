@@ -1,0 +1,28 @@
+.menu
+{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 40px;
+	list-style-type: none;
+}
+.menu li
+{
+	padding: 15px;
+	background-color: var(--color-white);
+	margin: 10px;
+	border-radius: 10px;
+	transition: all 0.3s;
+}
+.menu li a 
+{
+	text-decoration: none;
+	color: var(--color-black);
+}
+.menu li:hover
+{
+	background-color: var(--color-two);
+}
+.menu li:hover a
+{
+	color: var(--color-white);
+}

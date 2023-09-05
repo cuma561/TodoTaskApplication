@@ -1,9 +1,10 @@
-import { NavLink } from 'react-router-dom'
+import styles from './MainMenu.module.css';
+import { NavLink } from 'react-router-dom';
 
 export function MainMenu()
 {
 	return(
-		<ul>
+		<ul className={styles.menu}>
 			<li>
 				<NavLink to="/">Homepage</NavLink>
 			</li>
