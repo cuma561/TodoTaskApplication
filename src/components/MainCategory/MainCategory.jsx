@@ -41,6 +41,11 @@ export function MainCategory()
 		console.log("Edit Category");
 	}
 
+	function cancelAddCategory()
+	{
+		setIsShowForm(false);
+	}
+
 	return(
 		<>
 			<MainMenu />
@@ -50,7 +55,9 @@ export function MainCategory()
 					{!isShowForm && <ShowFormButton name="+" onClick={() => setIsShowForm(true)}/>}
 				</div>
 				<Subheading name={getSubheadingCategory(categories.length)}/>
-				{isShowForm && <FormCategory onFormSubmit={(newCategoryTodoName) => addCategoryTodo(newCategoryTodoName)}/>}
+				{isShowForm && <FormCategory onFormSubmit={(newCategoryTodoName) => addCategoryTodo(newCategoryTodoName)}
+					onCancel={() => cancelAddCategory()}
+				/>}
 				<ul>
 					{categories.map(({ id, name }) => (
 						<CategoryItem key={id} name={name} onEdit={() => editCategoryTodo(id)}

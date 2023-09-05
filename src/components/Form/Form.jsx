@@ -2,7 +2,7 @@ import { Button } from '../Button/Button';
 import styles from './Form.module.css';
 import { useState } from 'react'; 
 
-export function Form({ onFormSubmit })
+export function Form({ onFormSubmit, onCancel })
 {
 	const [isValue, setIsValue] = useState("");
 
@@ -10,8 +10,9 @@ export function Form({ onFormSubmit })
 		<form className={styles.form} 
 			onSubmit={(event) => {event.preventDefault(); onFormSubmit(isValue);}}>
 			<input value={isValue} onChange={(event) => setIsValue(event.target.value)} 
-				className={styles.input} type="text" placeholder="Enter the name of the task"/>
+				className={styles.input} type="text" placeholder="Enter the name of the task"/><br />
 			<Button disabled={isValue === ""}>Add</Button>
+			<Button onClick={onCancel}>Cancel</Button>
 		</form>
 	)
 }

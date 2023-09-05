@@ -72,6 +72,11 @@ export function MainTodo()
         console.log("Edit Todo Task");
     }
 
+    function cancelAddTodo()
+    {
+        setIsShowForm(false);
+    }
+
 	return(
 		<>
             <MainMenu />
@@ -81,7 +86,9 @@ export function MainTodo()
 					{!isShowForm && <ShowFormButton name="+" onClick={() => setIsShowForm(true)}/>}
 				</div>
 				<Subheading name={getSubheading(todos.length)}/>
-				{isShowForm && <Form onFormSubmit={(newTodoName) => addTodo(newTodoName)} />}
+				{isShowForm && <Form onFormSubmit={(newTodoName) => addTodo(newTodoName)} 
+                    onCancel={() => cancelAddTodo()}
+                />}
         		<ul>
           			{todos.map(({ id, name, done }) => (
             			<TodoItem key={id} name={name} done={done} onDone={() => doneTodo(id)} 
