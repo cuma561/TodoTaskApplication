@@ -19,14 +19,15 @@ export function MainTodo()
     	localStorage.setItem("todos", JSON.stringify(todos));
   	}, [todos]);
 
-  	function addTodo(newTodoName)
+  	function addTodo(newTodoName, newCategoryName)
   	{
     	setTodos((prevTodos) => [
       		...prevTodos,
       		{
         		id: prevTodos.length + 1,
         		name: newTodoName,
-        		done: false
+        		done: false,
+                categoryName: newCategoryName
       		},
     	]);
     	setIsShowForm(false);
@@ -86,7 +87,9 @@ export function MainTodo()
 					{!isShowForm && <ShowFormButton name="+" onClick={() => setIsShowForm(true)}/>}
 				</div>
 				<Subheading name={getSubheading(todos.length)}/>
-				{isShowForm && <Form onFormSubmit={(newTodoName) => addTodo(newTodoName)} 
+				{isShowForm && <Form 
+                    onFormSubmit={(newTodoName,newCategoryName) => 
+                    addTodo(newTodoName,newCategoryName)} 
                     onCancel={() => cancelAddTodo()}
                 />}
         		<ul>

@@ -24,8 +24,8 @@ export function MainCategory()
 		setCategories((prevCategories) =>[
 			...prevCategories,
 			{
-				id: prevCategories.length + 1,
-				name: newCategoryTodoName
+				categoryId: prevCategories.length + 1,
+				categoryName: newCategoryTodoName
 			},
 		])
 		setIsShowForm(false);
@@ -33,7 +33,7 @@ export function MainCategory()
 
 	function deleteCategoryTodo(id)
 	{
-		setCategories((prevCategories) => prevCategories.filter((category) => category.id !== id));
+		setCategories((prevCategories) => prevCategories.filter((category) => category.categoryId !== id));
 	}
 
 	function editCategoryTodo(id)
@@ -59,9 +59,10 @@ export function MainCategory()
 					onCancel={() => cancelAddCategory()}
 				/>}
 				<ul>
-					{categories.map(({ id, name }) => (
-						<CategoryItem key={id} name={name} onEdit={() => editCategoryTodo(id)}
-							onDelete={() => deleteCategoryTodo(id)}/>
+					{categories.map(({ categoryId, categoryName }) => (
+						<CategoryItem key={categoryId} categoryName={categoryName} 
+							onEdit={() => editCategoryTodo(categoryId)}
+							onDelete={() => deleteCategoryTodo(categoryId)}/>
 					))}
 				</ul>
 			</div>
