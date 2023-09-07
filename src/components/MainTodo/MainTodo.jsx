@@ -90,8 +90,9 @@ export function MainTodo()
                     onCancel={() => cancelAddTodo()}
                 />}
         		<ul>
-          			{todos.map(({ id, name, done }) => (
-            			<TodoItem key={id} name={name} categoryName="Testowa kategoria" done={done} onDone={() => doneTodo(id)} 
+          			{todos.map(({ id, name, done, categoryName }) => (
+            			<TodoItem key={id} name={name} categoryName={ categoryName } 
+                            done={done} onDone={() => doneTodo(id)} 
               				onDelete={() => deleteTodo(id)} onUndone={() => undoneTodo(id)} 
                             onEdit={() => editTodo(id)}/>
           			))}

@@ -10,7 +10,7 @@ export function Form({ onFormSubmit, onCancel })
 		<form className={styles.form} 
 			onSubmit={(event) => {event.preventDefault(); onFormSubmit(isValue);}}>
 			<input value={isValue} onChange={(event) => setIsValue(event.target.value)} 
-				className={styles.input} type="text" placeholder="Enter the name of the task"/><br />
+				className={styles.input} type="text" placeholder="Enter the name of the task"/>
 			<Button disabled={isValue === ""}>Add</Button>
 			<Button onClick={onCancel}>Cancel</Button>
 		</form>
