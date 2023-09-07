@@ -44,6 +44,9 @@ body
     padding-top: 16px;
     min-width: 400px;
 }
+.name {
+	width: 100%;
+}
 .rowTodo
 {
 	display: flex;
