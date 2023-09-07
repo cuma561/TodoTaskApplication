@@ -4,6 +4,7 @@
 	--color-two: #497BE8;
 	--color-white: #ffffff;
 	--color-black: #000000;
+	--color-gray: #aaaaaa;
 }
 *
 {
@@ -43,6 +44,9 @@ body
     padding-top: 16px;
     min-width: 400px;
 }
-.name {
-    width: 100%;
+.rowTodo
+{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
