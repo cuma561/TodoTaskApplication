@@ -91,8 +91,7 @@ export function MainTodo()
           			{todos.map(({ id, name, done, categoryName }) => (
             			<TodoItem key={id} name={name} categoryName={ categoryName } 
                             done={done} onDone={() => doneTodo(id)} 
-              				onDelete={() => deleteTodo(id)} onUndone={() => undoneTodo(id)} 
-                            onEdit={() => editTodo(id)}/>
+              				onDelete={() => deleteTodo(id)} onUndone={() => undoneTodo(id)}/>
           			))}
         		</ul>
 			</div>
