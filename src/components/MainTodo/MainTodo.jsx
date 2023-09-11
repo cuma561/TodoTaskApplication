@@ -73,6 +73,36 @@ export function MainTodo()
         setIsShowForm(false);
     }
 
+    function upTask(id)
+    {
+        const i = todos.findIndex((t) => t.id == id);
+        if (!i == 0) {
+            setTodos([
+                ...todos.slice(0, i - 1),
+                todos[i],
+                todos[i - 1],
+                ...todos.slice(i + 1),
+            ]);
+        } else {
+            return;
+        }
+    }
+
+    function downTask(id)
+    {
+        const i = todos.findIndex((t) => t.id == id) + 1;
+        if (!(i == todos.length)) {
+            setTodos([
+                ...todos.slice(0, i - 1),
+                todos[i],
+                todos[i - 1],
+                ...todos.slice(i + 1),
+            ]);
+        } else {
+            return;
+        }
+    }
+
 	return(
 		<>
             <MainMenu />
@@ -91,7 +121,8 @@ export function MainTodo()
           			{todos.map(({ id, name, done, categoryName }) => (
             			<TodoItem key={id} name={name} categoryName={ categoryName } 
                             done={done} onDone={() => doneTodo(id)} 
-              				onDelete={() => deleteTodo(id)} onUndone={() => undoneTodo(id)}/>
+              				onDelete={() => deleteTodo(id)} onUndone={() => undoneTodo(id)}
+                            upTask={() => upTask(id)} downTask={() => downTask(id)}/>
           			))}
         		</ul>
 			</div>

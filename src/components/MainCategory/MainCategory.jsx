@@ -41,6 +41,36 @@ export function MainCategory()
 		setIsShowForm(false);
 	}
 
+	function upCategoryTask(id)
+	{
+		const i = categories.findIndex((c) => c.categoryId == id);
+		if (!i == 0) {
+			setCategories([
+				...categories.slice(0, i - 1),
+				categories[i],
+				categories[i - 1],
+				...categories.slice(i + 1),
+			]);
+		} else {
+			return;
+		}
+	}
+
+	function downCategoryTask(id)
+	{
+		const i = categories.findIndex((c) => c.categoryId == id) + 1;
+		if (!(i == categories.length)) {
+			setCategories([
+				...categories.slice(0, i - 1),
+				categories[i],
+				categories[i - 1],
+				...categories.slice(i + 1),
+			]);
+		} else {
+			return;
+		}
+	}
+
 	return(
 		<>
 			<MainMenu />
@@ -57,7 +87,9 @@ export function MainCategory()
 				<ul>
 					{categories.map(({ categoryId, categoryName }) => (
 						<CategoryItem key={categoryId} categoryName={categoryName}
-							onDelete={() => deleteCategoryTodo(categoryId)}/>
+							onDelete={() => deleteCategoryTodo(categoryId)}
+							upCategoryTask={() => upCategoryTask(categoryId)}
+							downCategoryTask={() => downCategoryTask(categoryId)}/>
 					))}
 				</ul>
 			</div>
