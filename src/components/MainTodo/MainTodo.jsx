@@ -68,11 +68,6 @@ export function MainTodo()
         );
     }
 
-    function editTodo(id)
-    {
-        console.log("Edit Todo Task");
-    }
-
     function cancelAddTodo()
     {
         setIsShowForm(false);

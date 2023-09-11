@@ -36,11 +36,6 @@ export function MainCategory()
 		setCategories((prevCategories) => prevCategories.filter((category) => category.categoryId !== id));
 	}
 
-	function editCategoryTodo(id)
-	{
-		console.log("Edit Category");
-	}
-
 	function cancelAddCategory()
 	{
 		setIsShowForm(false);
@@ -55,13 +50,13 @@ export function MainCategory()
 					{!isShowForm && <ShowFormButton name="+" onClick={() => setIsShowForm(true)}/>}
 				</div>
 				<Subheading name={getSubheadingCategory(categories.length)}/>
-				{isShowForm && <FormCategory onFormSubmit={(newCategoryTodoName) => addCategoryTodo(newCategoryTodoName)}
+				{isShowForm && <FormCategory 
+					onFormSubmit={(newCategoryTodoName) => addCategoryTodo(newCategoryTodoName)}
 					onCancel={() => cancelAddCategory()}
 				/>}
 				<ul>
 					{categories.map(({ categoryId, categoryName }) => (
-						<CategoryItem key={categoryId} categoryName={categoryName} 
-							onEdit={() => editCategoryTodo(categoryId)}
+						<CategoryItem key={categoryId} categoryName={categoryName}
 							onDelete={() => deleteCategoryTodo(categoryId)}/>
 					))}
 				</ul>

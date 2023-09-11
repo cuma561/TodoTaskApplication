@@ -1,6 +1,6 @@
 import { Button } from '../Button/Button';
 import styles from './TodoItem.module.css';
-export function TodoItem({ name, categoryName ,done, onDone, onDelete, onUndone, onEdit })
+export function TodoItem({ name, categoryName ,done, onDone, onDelete, onUndone })
 {
 	return(
 		<li className="item">
@@ -9,7 +9,6 @@ export function TodoItem({ name, categoryName ,done, onDone, onDelete, onUndone,
 				<span className={styles.nameCategory}>{ categoryName }</span>
 			</div>
 			{!done && <Button onClick={onDone}>Done</Button>}
-			{!done && <Button onClick={onEdit}>Edit</Button>}
 			{done && <Button onClick={onUndone}>Undone</Button>}
 			<Button onClick={onDelete}>Delete</Button>
 		</li>
