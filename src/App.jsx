@@ -1,7 +1,5 @@
 import { MainContent } from "./components/MainContent/MainContent";
 
-function App() {
+export function App() {
   return <MainContent />;
 }
-
-export default App;
