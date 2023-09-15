@@ -17,6 +17,10 @@ export function MainCategory()
         {categoryId: 3, categoryName: "Homework", editAble: false}
     ])
 
+    useEffect(() => {
+        localStorage.setItem("categories", JSON.stringify(categories))
+	}, [categories]);
+
 	function addCategoryTodo(newCategoryTodoName)
 	{
 		setCategories((prevCategories) =>[
