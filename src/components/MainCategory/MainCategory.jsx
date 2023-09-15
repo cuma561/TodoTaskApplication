@@ -78,7 +78,7 @@ export function MainCategory()
 				if (categories.categoryId !== id) {
 					return categories;
 				} else {
-					return { ...categories, editTable: true };
+					return { ...categories, editAble: true };
 				}
 			})
 		);
@@ -91,7 +91,7 @@ export function MainCategory()
 				if (categories.categoryId !== id) {
 					return categories;
 				} else {
-					return { ...categories, editTable: false };
+					return { ...categories, editAble: false };
 				}
 			})
 		);
@@ -104,7 +104,7 @@ export function MainCategory()
 				if(categories.categoryId !== id) {
 					return categories;
 				} else {
-					return {...categories, categoryName: updatedNameCategory, editTable: false};
+					return {...categories, categoryName: updatedNameCategory, editAble: false};
 				}
 			}));
 	}
@@ -123,9 +123,9 @@ export function MainCategory()
 					onCancel={() => cancelAddCategory()}
 				/>}
 				<ul>
-					{categories.map(({ categoryId, categoryName, editTable }) => (
+					{categories.map(({ categoryId, categoryName, editAble }) => (
 						<CategoryItem key={categoryId} categoryName={categoryName}
-							editTable={editTable}
+							editAble={editAble}
 							onDelete={() => deleteCategoryTodo(categoryId)}
 							upCategoryTask={() => upCategoryTask(categoryId)}
 							downCategoryTask={() => downCategoryTask(categoryId)}
