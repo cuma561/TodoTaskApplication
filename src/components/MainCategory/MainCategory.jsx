@@ -16,8 +16,8 @@ export function MainCategory()
 	const [categories, setCategories] = useState(localStorageCategories);
 
 	useEffect(() => {
-		localStorage.setItem("categories", JSON.stringify(categories))
-	}, [categories]);
+        localStorage.setItem("categories", JSON.stringify(categories))
+    }, [categories]);
 
 	function addCategoryTodo(newCategoryTodoName)
 	{
@@ -71,6 +71,44 @@ export function MainCategory()
 		}
 	}
 
+	function openEdit(id)
+	{
+		setCategories((prevCategories) =>
+			prevCategories.map((categories) => {
+				if (categories.categoryId !== id) {
+					return categories;
+				} else {
+					return { ...categories, editTable: true };
+				}
+			})
+		);
+	}
+
+	function closeEdit(id)
+	{
+		setCategories((prevCategories) =>
+			prevCategories.map((categories) => {
+				if (categories.categoryId !== id) {
+					return categories;
+				} else {
+					return { ...categories, editTable: false };
+				}
+			})
+		);
+	}
+
+	function editCategoryTodo(id,updatedNameCategory)
+	{
+		setCategories((prevCategories) => 
+			prevCategories.map((categories) => {
+				if(categories.categoryId !== id) {
+					return categories;
+				} else {
+					return {...categories, categoryName: updatedNameCategory, editTable: false};
+				}
+			}));
+	}
+
 	return(
 		<>
 			<MainMenu />
@@ -85,11 +123,15 @@ export function MainCategory()
 					onCancel={() => cancelAddCategory()}
 				/>}
 				<ul>
-					{categories.map(({ categoryId, categoryName }) => (
+					{categories.map(({ categoryId, categoryName, editTable }) => (
 						<CategoryItem key={categoryId} categoryName={categoryName}
+							editTable={editTable}
 							onDelete={() => deleteCategoryTodo(categoryId)}
 							upCategoryTask={() => upCategoryTask(categoryId)}
-							downCategoryTask={() => downCategoryTask(categoryId)}/>
+							downCategoryTask={() => downCategoryTask(categoryId)}
+							openEditCategory={() => openEdit(categoryId)}
+							closeEditCategory={() => closeEdit(categoryId)}
+							editCategory={(updatedNameCategory) => editCategoryTodo(categoryId,updatedNameCategory)}/>
 					))}
 				</ul>
 			</div>
