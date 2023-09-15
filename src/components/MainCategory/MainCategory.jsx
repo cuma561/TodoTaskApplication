@@ -9,15 +9,13 @@ import { getSubheadingCategory } from "../../utils/getSubheading";
 
 export function MainCategory()
 {
-	const localStorageCategories = JSON.parse(localStorage.getItem("categories"));
-
 	const [isShowForm, setIsShowForm] = useState(false);
 
-	const [categories, setCategories] = useState(localStorageCategories);
-
-	useEffect(() => {
-        localStorage.setItem("categories", JSON.stringify(categories))
-    }, [categories]);
+	const [categories, setCategories] = useState([
+        {categoryId: 1, categoryName: "Shopping", editAble: false},
+        {categoryId: 2, categoryName: "Learning", editAble: false},
+        {categoryId: 3, categoryName: "Homework", editAble: false}
+    ])
 
 	function addCategoryTodo(newCategoryTodoName)
 	{
