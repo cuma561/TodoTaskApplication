@@ -103,6 +103,47 @@ export function MainTodo()
         }
     }
 
+    function openEdit(id) {
+        setTodos((prevTodos) =>
+            prevTodos.map((todo) => {
+                if (todo.id !== id) {
+                    return todo;
+                } else if (todo.done) {
+                    return todo;
+                } else {
+                    return { ...todo, editAble: true };
+                }
+            })
+        );
+    }
+
+    function closeEdit(id)
+    {
+        setTodos((prevTodos) =>
+            prevTodos.map((todo) => {
+                if (todo.id !== id) {
+                    return todo;
+                } else if (todo.done) {
+                    return todo;
+                } else {
+                    return { ...todo, editAble: false };
+                }
+            })
+        );
+    }
+
+    function editTodo(id,updatedName) {
+        setTodos((prevTodos) =>
+            prevTodos.map((todo) => {
+                if (todo.id !== id) {
+                    return todo;
+                } else {
+                    return { ...todo, name: updatedName, editAble: false };
+                }
+            })
+        );
+    }
+
 	return(
 		<>
             <MainMenu />
@@ -118,11 +159,15 @@ export function MainTodo()
                     onCancel={() => cancelAddTodo()}
                 />}
         		<ul>
-          			{todos.map(({ id, name, done, categoryName }) => (
-            			<TodoItem key={id} name={name} categoryName={ categoryName } 
+          			{todos.map(({ id, name, done, categoryName, editAble }) => (
+            			<TodoItem key={id} name={name} categoryName={ categoryName }
+                            editAble={editAble} 
                             done={done} onDone={() => doneTodo(id)} 
               				onDelete={() => deleteTodo(id)} onUndone={() => undoneTodo(id)}
-                            upTask={() => upTask(id)} downTask={() => downTask(id)}/>
+                            upTask={() => upTask(id)} downTask={() => downTask(id)}
+                            openEditTodo={() => openEdit(id)}
+                            closeEditTodo={() => closeEdit(id)}
+                            editTodo={(updatedName) => editTodo(id,updatedName)}/>
           			))}
         		</ul>
 			</div>
