@@ -14,6 +14,10 @@ export function MainCategory() {
 
   const [categories, setCategories] = useState(localStorageCategories);
 
+  if (categories == null) {
+    localStorage.setItem("categories", JSON.stringify([]));
+  }
+
   useEffect(() => {
     localStorage.setItem("categories", JSON.stringify(categories));
   }, [categories]);

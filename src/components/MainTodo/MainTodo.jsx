@@ -12,6 +12,10 @@ export function MainTodo() {
 
   const [todos, setTodos] = useState(localStorageTodos);
 
+  if (todos == null) {
+    localStorage.setItem("todos", JSON.stringify([]));
+  }
+
   const [isShowForm, setIsShowForm] = useState(false);
 
   useEffect(() => {
