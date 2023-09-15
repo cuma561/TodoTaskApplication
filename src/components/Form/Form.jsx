@@ -4,12 +4,9 @@ import { useState } from 'react';
 
 export function Form({ onFormSubmit, onCancel })
 {
+	const localStorageCategories = JSON.parse(localStorage.getItem("categories"));
 
-	const [categories] = useState([
-        {categoryId: 1, categoryName: "Shopping", editAble: false},
-        {categoryId: 2, categoryName: "Learning", editAble: false},
-        {categoryId: 3, categoryName: "Homework", editAble: false}
-    ]);
+	const [categories] = useState(localStorageCategories);
 
 	const [isValue, setIsValue] = useState("");
 

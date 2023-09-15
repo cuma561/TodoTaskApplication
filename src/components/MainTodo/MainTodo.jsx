@@ -9,11 +9,9 @@ import { MainMenu } from '../MainMenu/MainMenu';
 
 export function MainTodo()
 {
-	const [todos, setTodos] = useState([
-        {id: 1, name: "Do shopping", done: false, categoryId: 1, categoryName: "Shopping", editAble: false},
-        {id: 2, name: "Learn programming", done: false, categoryId: 2, categoryName: "Learning", editAble: false},
-        {id: 3, name: "Throw out rubbish", done: true, categoryId: 3, categoryName: "Homework", editAble: false}
-    ])
+    const localStorageTodos = JSON.parse(localStorage.getItem("todos"));
+
+	const [todos, setTodos] = useState(localStorageTodos)
 
 	const [isShowForm, setIsShowForm] = useState(false);
 
