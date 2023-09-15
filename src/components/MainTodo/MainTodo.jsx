@@ -17,6 +17,10 @@ export function MainTodo()
 
 	const [isShowForm, setIsShowForm] = useState(false);
 
+    useEffect(() => {
+        localStorage.setItem("todos", JSON.stringify(todos));
+    }, [todos]);
+
   	function addTodo(newTodoName, newCategoryName)
   	{
     	setTodos((prevTodos) => [
