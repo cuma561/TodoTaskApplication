@@ -1,13 +1,7 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-
-import { MainContent } from './components/MainContent/MainContent';
+import { MainContent } from "./components/MainContent/MainContent";
 
 function App() {
-
-  return (
-    <MainContent />
-  )
+  return <MainContent />;
 }
 
-export default App
+export default App;

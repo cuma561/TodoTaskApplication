@@ -1,55 +1,122 @@
-:root
-{
-	--color-one: #68EACC;
-	--color-two: #497BE8;
-	--color-white: #ffffff;
-	--color-black: #000000;
-	--color-gray: #aaaaaa;
+:root {
+  --color-one: #68eacc;
+  --color-two: #497be8;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray: #aaaaaa;
 }
-*
-{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body
-{
-	height: 100vh;
-	font-family: Helvetica, sans-serif;
-	background: linear-gradient(to bottom, var(--color-one) 0%, var(--color-two) 100%);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+body {
+  height: 100vh;
+  font-family: Helvetica, sans-serif;
+  background: linear-gradient(
+    to bottom,
+    var(--color-one) 0%,
+    var(--color-two) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.container
-{
-	display: inline-block;
-    background-color: var(--color-white);
-    padding: 52px 54px;
-    border-radius: 12px;
-    max-width: 800px;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
-.row
-{
-	display: flex;
-    gap: 200px;
+.container {
+  display: inline-block;
+  background-color: var(--color-white);
+  padding: 52px 54px;
+  border-radius: 12px;
+  max-width: 800px;
+}
+.row {
+  display: flex;
+  gap: 200px;
 }
 .item {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-top: 1px solid black;
-    margin-top: 16px;
-    padding-top: 16px;
-    min-width: 400px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid black;
+  margin-top: 16px;
+  padding-top: 16px;
+  min-width: 400px;
 }
 .name {
-	width: 100%;
+  width: 100%;
 }
-.rowTodo
-{
-	display: flex;
-	flex-direction: column;
-	width: 100%;
+.rowTodo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  list-style-type: none;
+}
+.menu li {
+  padding: 15px;
+  background-color: var(--color-white);
+  margin: 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.menu li a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+.menu li:hover {
+  background-color: var(--color-two);
+}
+.menu li:hover a {
+  color: var(--color-white);
+}
+.buttonShowForm {
+  background-color: var(--color-two);
+  border: 0;
+  color: var(--color-white);
+  width: 50px;
+  aspect-ratio: 1;
+  font-size: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.button {
+  color: var(--color-two);
+  background-color: transparent;
+  border: solid 1px currentColor;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.button:hover {
+  color: var(--color-white);
+  background-color: var(--color-two);
+}
+.form {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+.input {
+  width: 100%;
+  padding: 8px;
+  border: solid 1px currentColor;
+  border-radius: 4px;
+  outline: none;
+}
+.done {
+  text-decoration: line-through;
+}
+.nameCategory {
+  color: var(--color-gray);
 }

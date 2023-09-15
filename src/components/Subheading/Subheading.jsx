@@ -1,6 +1,3 @@
-export function Subheading({ name })
-{
-	return (
-		<h2>{name}</h2>
-	)
+export function Subheading({ name }) {
+  return <h2>{name}</h2>;
 }

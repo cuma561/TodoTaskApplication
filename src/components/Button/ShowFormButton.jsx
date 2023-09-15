@@ -1,8 +1,7 @@
-import styles from './ShowFormButton.module.css';
-
-export function ShowFormButton({ name, onClick })
-{
-	return(
-		<button className={styles.button} onClick={onClick}>{ name }</button>
-	)
+export function ShowFormButton({ name, onClick }) {
+  return (
+    <button className="buttonShowForm" onClick={onClick}>
+      {name}
+    </button>
+  );
 }
