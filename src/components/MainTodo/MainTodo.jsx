@@ -30,6 +30,7 @@ export function MainTodo() {
         name: newTodoName,
         done: false,
         categoryName: newCategoryName,
+        editAble: false,
       },
     ]);
     setIsShowForm(false);

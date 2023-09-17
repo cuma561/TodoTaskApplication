@@ -28,6 +28,7 @@ export function MainCategory() {
       {
         categoryId: prevCategories.length + 1,
         categoryName: newCategoryTodoName,
+        editAble: false
       },
     ]);
     setIsShowForm(false);
