@@ -60,7 +60,6 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
-  list-style-type: none;
 }
 .menu a {
   padding: 15px;
