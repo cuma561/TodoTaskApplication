@@ -152,7 +152,7 @@ export function MainTodo() {
             <ShowFormButton name="+" onClick={() => setIsShowForm(true)} />
           )}
         </div>
-        <Subheading name={getSubheading(todos.length)} />
+        <Subheading name={getSubheading(todos.length, "tasks")} />
         {isShowForm && (
           <Form
             onFormSubmit={(newTodoName, newCategoryName) =>

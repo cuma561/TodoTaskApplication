@@ -5,7 +5,7 @@ import { FormCategory } from "../Form/FormCategory";
 import { CategoryItem } from "../CategoryItem/CategoryItem";
 import { MainMenu } from "../MainMenu/MainMenu";
 import { Subheading } from "../Subheading/Subheading";
-import { getSubheadingCategory } from "../../utils/getSubheading";
+import { getSubheading } from "../../utils/getSubheading";
 
 export function MainCategory() {
   const localStorageCategories = JSON.parse(localStorage.getItem("categories"));
@@ -28,7 +28,7 @@ export function MainCategory() {
       {
         categoryId: prevCategories.length + 1,
         categoryName: newCategoryTodoName,
-        editAble: false
+        editAble: false,
       },
     ]);
     setIsShowForm(false);
@@ -122,7 +122,7 @@ export function MainCategory() {
             <ShowFormButton name="+" onClick={() => setIsShowForm(true)} />
           )}
         </div>
-        <Subheading name={getSubheadingCategory(categories.length)} />
+        <Subheading name={getSubheading(categories.length, "categories")} />
         {isShowForm && (
           <FormCategory
             onFormSubmit={(newCategoryTodoName) =>

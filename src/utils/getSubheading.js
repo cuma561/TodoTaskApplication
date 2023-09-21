@@ -1,27 +1,13 @@
-export function getSubheading(numberOfTodoItem) {
+export const getSubheading = (number, name) => {
   switch (true) {
-    case numberOfTodoItem > 4:
-      return `${numberOfTodoItem} tasks`;
-    case numberOfTodoItem > 1:
-      return `${numberOfTodoItem} tasks`;
-    case numberOfTodoItem === 1:
-      return "1 tasks";
-    case numberOfTodoItem === 0:
+    case number > 4:
+      return `${number} ${name}`;
+    case number > 1:
+      return `${number} ${name}`;
+    case number === 1:
+      return `1 ${name}`;
+    case number === 0:
     default:
-      return "No tasks";
+      return `No ${name}`;
   }
-}
-
-export function getSubheadingCategory(numberOfCategoryItem) {
-  switch (true) {
-    case numberOfCategoryItem > 4:
-      return `${numberOfCategoryItem} categories`;
-    case numberOfCategoryItem > 1:
-      return `${numberOfCategoryItem} categories`;
-    case numberOfCategoryItem === 1:
-      return "1 category";
-    case numberOfCategoryItem === 0:
-    default:
-      return "No category";
-  }
-}
+};
