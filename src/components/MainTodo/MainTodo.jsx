@@ -136,7 +136,11 @@ export function MainTodo() {
         if (todo.id !== id) {
           return todo;
         } else {
-          return { ...todo, name: updatedName, editAble: false };
+          return {
+            ...todo,
+            name: updatedName,
+            editAble: false,
+          };
         }
       })
     );
