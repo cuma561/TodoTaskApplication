@@ -6,7 +6,7 @@ export function Form({ onFormSubmit, onCancel }) {
 
   const categoryName = localStorageCategories
     .filter((lsc) => lsc.categoryId == 1)
-    .map((lsc) => lsc.categoryName);
+    .map((lsc) => lsc.categoryName).toString();
 
   const [categories] = useState(localStorageCategories);
 
